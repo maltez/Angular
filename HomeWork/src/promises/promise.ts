@@ -2,38 +2,34 @@
 - After aggregate them data -> make three request in sequence.
 - Use promise */
 
-let req1 = new Promise((resolve, reject) => {
-    setTimeout(resolve, (Math.floor(Math.random() * 1000) + 1), 'res1');
-});
-let req2 = new Promise((resolve, reject) => {
-    setTimeout(resolve, (Math.floor(Math.random() * 1000) + 1), 'res2');
-});
-let req3 = new Promise((resolve, rejec) => {
-    setTimeout(resolve, (Math.floor(Math.random() * 1000) + 1), 'res3');
-});
-let req4 = new Promise((resolve, reject) => {
-    setTimeout(resolve, (Math.floor(Math.random() * 1000) + 1), 'res4');
-});
-let req5 = new Promise((resolve, reject) => {
-    setTimeout(resolve, (Math.floor(Math.random() * 1000) + 1), 'res5');
-});
+let requests = [], requestsQuantity = 5;
 
-Promise.all([req1, req2, req3, req4, req5])
-    .then((res) => {
-        console.log(res);
-        return new Promise((resolve, reject) => {
+
+for (let i = 0; i < requestsQuantity; i++) {
+    let req = new Promise<string>((resolve, reject) => {
+        setTimeout(resolve, (Math.floor(Math.random() * 1000) + 1), `res${i}`);
+    });
+    requests.push(req);
+}
+
+Promise.all(requests)
+    .then((res: Array<string>): Promise<string> => {
+        console.log(`Request one: ${res}`);
+        return new Promise<string>((resolve, reject) => {
             setTimeout(resolve, (Math.floor(Math.random() * 1000) + 1), res);
         });
     })
-    .then((res) => {
-        console.log(res);
-        return new Promise((resolve, reject) => {
+    .then((res: string): Promise<string> => {
+        console.log(`Request two: ${res}`);
+        return new Promise<string>((resolve, reject) => {
             setTimeout(resolve, (Math.floor(Math.random() * 1000) + 1), res);
         });
     })
-    .then((res) => {
-        console.log(res);
-        return new Promise((resolve, reject) => {
+    .then((res: string): Promise<string> => {
+        console.log(`Request three: ${res}`);
+        return new Promise<string>((resolve, reject) => {
             setTimeout(resolve, (Math.floor(Math.random() * 1000) + 1), res);
         });
-    })
+    }).then((res: string) => {
+        console.log('Requests completed');
+    });
