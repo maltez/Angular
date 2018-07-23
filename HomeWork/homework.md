@@ -9,3 +9,10 @@
 - After aggregate them data -> make three request in sequence.
 - Use promise
 - Create decorator for function. Decorator should be log each time of invoke this function.
+
+# Homework 2.
+- Create new app via angular-cli.
+- Clean-up the app.
+- Create two components
+    - First number keyboard(0-9)
+    - Second calculation panel(show results from keyboard)
