@@ -1,0 +1,19 @@
+{
+  "name": "02.TypeScript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/es6-promise": "^3.3.0",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/es6-shim": "^0.31.37"
+  }
+}
