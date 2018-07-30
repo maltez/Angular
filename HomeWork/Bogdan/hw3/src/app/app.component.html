@@ -1,0 +1,33 @@
+<form name="calculator">
+  <table>
+    <tr>
+      <td colspan="4">
+        <app-result-screen [value]="output"></app-result-screen>
+      </td>
+    </tr>
+    <tr>
+      <td><app-number-button (click)="addToCalculation(1)" [buttonLabel]="1"></app-number-button></td>
+      <td><app-number-button (click)="addToCalculation(2)" [buttonLabel]="2"></app-number-button></td>
+      <td><app-number-button (click)="addToCalculation(3)" [buttonLabel]="3"></app-number-button></td>
+      <td><app-action-button [disabled]="disabled" (click)="setOperator('+')" [buttonLabel]="'+'" [buttonName]="'plus'"></app-action-button></td>
+    </tr>
+    <tr>
+      <td><app-number-button (click)="addToCalculation(4)" [buttonLabel]="4"></app-number-button></td>
+      <td><app-number-button (click)="addToCalculation(5)" [buttonLabel]="5"></app-number-button></td>
+      <td><app-number-button (click)="addToCalculation(6)" [buttonLabel]="6"></app-number-button></td>
+      <td><app-action-button [disabled]="disabled" (click)="setOperator('-')" [buttonLabel]="'-'" [buttonName]="'minus'"></app-action-button></td>
+    </tr>
+    <tr>
+      <td><app-number-button (click)="addToCalculation(7)" [buttonLabel]="7"></app-number-button></td>
+      <td><app-number-button (click)="addToCalculation(8)" [buttonLabel]="8"></app-number-button></td>
+      <td><app-number-button (click)="addToCalculation(9)" [buttonLabel]="9"></app-number-button></td>
+      <td><app-action-button [disabled]="disabled" (click)="setOperator('x')" [buttonLabel]="'х'" [buttonName]="'minus'"></app-action-button></td>
+    </tr>
+    <tr>
+      <td><button (click)="makeItClearAgain()" name="clear" type="button">c</button></td>
+      <td><app-number-button (click)="addToCalculation(0)" [buttonLabel]="0"></app-number-button></td>
+      <td><button (click)="calculateResult()" name="do" type="button">=</button></td>
+      <td><app-action-button [disabled]="disabled" (click)="setOperator('/')" [buttonLabel]="'/'" [buttonName]="'div'"></app-action-button></td>
+    </tr>
+  </table>
+</form>

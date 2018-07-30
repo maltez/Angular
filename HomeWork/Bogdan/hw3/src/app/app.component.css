@@ -1,0 +1,13 @@
+form {
+    position:fixed;
+    top:20%;
+    left:50%;
+}
+table {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+input:disabled {
+    background-color: #91E1EE;
+}
