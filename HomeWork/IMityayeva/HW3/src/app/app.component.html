@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="col-sm-12"><display [total]="result"></display></div>
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="row">
+        <div *ngFor="let num of numbers" class="col-sm-4">
+          <number-button [numberValue]="num" (clickNumber)="numberHandler($event)"></number-button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-secondary btn-lg">C</button>
+        </div>
+        <div class="col-sm-4">
+          <number-button [numberValue]="0" (clickNumber)="numberHandler($event)"></number-button>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-secondary btn-lg">=</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div *ngFor="let op of operations" class="col-sm-12">
+        <operation-button [operationValue]="op" (clickOperation)="operationHandler($event)"></operation-button>
+      </div>
+    </div>
+  </div>
+
+</div>
