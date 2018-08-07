@@ -1,0 +1,33 @@
+<form name="calculator">
+  <table>
+    <tr>
+      <td colspan="4">
+        <app-result-screen [value]="output"></app-result-screen>
+      </td>
+    </tr>
+    <tr>
+      <app-number-button (click)="addToCalculation(1)" [buttonLabel]="1"></app-number-button>
+      <app-number-button (click)="addToCalculation(2)" [buttonLabel]="2"></app-number-button>
+      <app-number-button (click)="addToCalculation(3)" [buttonLabel]="3"></app-number-button>
+      <app-action-button [disabled]="disabled" (click)="setOperator('+')" [buttonLabel]="'+'" [buttonName]="'plus'"></app-action-button>
+    </tr>
+    <tr>
+      <app-number-button (click)="addToCalculation(4)" [buttonLabel]="4"></app-number-button>
+      <app-number-button (click)="addToCalculation(5)" [buttonLabel]="5"></app-number-button>
+      <app-number-button (click)="addToCalculation(6)" [buttonLabel]="6"></app-number-button>
+      <app-action-button [disabled]="disabled" (click)="setOperator('-')" [buttonLabel]="'-'" [buttonName]="'minus'"></app-action-button>
+    </tr>
+    <tr>
+      <app-number-button (click)="addToCalculation(7)" [buttonLabel]="7"></app-number-button>
+      <app-number-button (click)="addToCalculation(8)" [buttonLabel]="8"></app-number-button>
+      <app-number-button (click)="addToCalculation(9)" [buttonLabel]="9"></app-number-button>
+      <app-action-button [disabled]="disabled" (click)="setOperator('x')" [buttonLabel]="'х'" [buttonName]="'mul'"></app-action-button>
+    </tr>
+    <tr>
+      <app-action-button [disabled]="false" (click)="makeItClearAgain()" [buttonLabel]="'c'" [buttonName]="'clear'"></app-action-button>
+      <app-number-button (click)="addToCalculation(0)" [buttonLabel]="0"></app-number-button>
+      <app-action-button [disabled]="false" (click)="calculateResult()" [buttonLabel]="'='" [buttonName]="'do'"></app-action-button>
+      <app-action-button [disabled]="disabled" (click)="setOperator('/')" [buttonLabel]="'/'" [buttonName]="'div'"></app-action-button>
+    </tr>
+  </table>
+</form>
