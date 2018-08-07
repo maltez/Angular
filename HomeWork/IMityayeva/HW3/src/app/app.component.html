@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="col-sm-12"><display [total]="result"></display></div>
+<div class="container col-sm-3">
+  <div><display [total]="result"></display></div>
   <div class="row">
     <div class="col-sm-9">
       <div class="row">
@@ -9,13 +9,13 @@
       </div>
       <div class="row">
         <div class="col-sm-4">
-          <button type="button" class="btn btn-secondary btn-lg">C</button>
+          <button type="button" class="btn btn-secondary btn-lg" style="width: 48px;" (click)="clearDisplay()">C</button>
         </div>
         <div class="col-sm-4">
           <number-button [numberValue]="0" (clickNumber)="numberHandler($event)"></number-button>
         </div>
         <div class="col-sm-4">
-          <button type="button" class="btn btn-secondary btn-lg">=</button>
+          <button type="button" class="btn btn-secondary btn-lg" style="width: 48px;" (click)="countTotal()">=</button>
         </div>
       </div>
     </div>
