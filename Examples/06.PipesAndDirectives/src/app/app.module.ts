@@ -7,10 +7,11 @@ import { DirectiveFirstTryComponent } from './directive.component';
 import { StarPipe } from './stars.pipe';
 import { PurePipe, ImpurePipe } from './pure.pipe';
 import { ColoredItemDirective } from './custom.directive';
+import { SuperPipe } from './super.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent, StarPipe, PurePipe, ImpurePipe, DirectiveFirstTryComponent, ColoredItemDirective
+    AppComponent, SuperPipe, StarPipe, PurePipe, ImpurePipe, DirectiveFirstTryComponent, ColoredItemDirective
   ],
   imports: [
     BrowserModule, FormsModule
