@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "new": "ng new Redux",
+    "new": "ng new Module",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
